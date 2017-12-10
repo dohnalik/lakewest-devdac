@@ -122,6 +122,9 @@ sampleRate:
 	3   "DSD512",
 	4   "DSD1024"
 	
+	
+#### FILE FORMAT
+
 ```shell
 [getFileFormat]{}
 ```
@@ -152,7 +155,7 @@ fileFormat:
 #### DIGITAL FILTER
 
 ```shell
-[getFilter]{filter:0}
+[getFilter]{}
 ```
 
 ```shell
@@ -193,34 +196,56 @@ state:
 	0   "THD compenstation disabled - listening mode",		
 	1   "THD compenstation enabled  - measurement mode	
 
-	
-#### DEVDAC SPECIFIC
+
+#### DPLL BANDWIDTH
+only aplicable when SPDIF input is selected. Lower DPLL BW means lower jitter, but its harder to lock to sources. Default is 5 for PCM and 10 for DSD (DoP over SPDIF).
 
 ```shell
-[get]{}
+[getDPLL]{}
 ```
 
 ```shell
-[pushInput]{activeInput:2}
+[pushDPLL]{levelPCM:0, levelDSD:0}
 ```
 
 ```shell
-[setInput]{activeInput:2}
+[setDPLL]{levelPCM:0, levelDSD:0}
 ```
 
-DevDAC specific:
+levelPCM:
 
-	0   "Stremer",	
-	1   "USB",	
-	2   "COAX 1",	
-	3   "OPT 1",	
-	4 - 255 reserved for future use.
+	0 - 16; 0 - DPLL OFF, 16 - highest BW	
 	
+levelDSD:
+
+	0 - 16; 0 - DPLL OFF, 16 - highest BW	
 	
+#### DEVDAC BOOT CONTROL
+
+```shell
+[pushBoot]{boot:0}
+```
+
+```shell
+[pushBoot]{boot:0}
+```
+
+boot:
+
+	0   note defined,	
+	1   puts CM3 into USB bootloader mode where new firmware can be burned in over USB	
+	
+TODO:
+define exit from bootloader mode thru I2C-1 command from Streamer Software to DevDAC as USB CDC channel has been disconected in bootloader mode. 
+
 	
 #### POWER OFF CONTROL
 
-Is pushed from the DevDAC to CM3 to signal user has switched off the unit with hardware front panel button. CM3 software then needs to start shutting down. After its mostly ready to cut the power, it sets turn off with cmd set to 1. DevDAC confirms with push with cmd 1 and then cuts the CM3 power in 10 seconds.
+Is pushed from the DevDAC to Streamer Software to signal user has switched off the unit with hardware front panel button. Streamer Software then needs to start shutting down. After its mostly ready to cut the power, it sets turn off with cmd set to 1. DevDAC confirms with push cmd:1 and then cuts the CM3 power in 10 seconds.
+
+```shell
+[getTurnOff]{}
+```
 
 ```shell
 [setTurnOff]{cmd:0}
@@ -232,11 +257,11 @@ Is pushed from the DevDAC to CM3 to signal user has switched off the unit with h
 ```
 cmd:
 
-0 - start shutting down - either user pressed a hardware power button or is shutting it down thru the CM3 software
+0 - start shutting down - either user pressed a hardware power button or is shutting it down thru the Streamer Software
 1 - unit is ready to cut the power in 10 seconds
 
 #### DEVDAC VERSION
-(from CM3 to DEVDAC)
+(from Streamer Software to DEVDAC)
 
 ```shell
 [getBoardVersion]{}
@@ -247,7 +272,7 @@ cmd:
 ```
 
 #### STREAMER VERSION
-(from DEVDAC to CM3)
+(from DEVDAC to Streamer Software)
 
 ```shell
 [getStreamerVersion]{}
