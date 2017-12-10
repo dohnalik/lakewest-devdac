@@ -14,7 +14,7 @@ DevDAC - lakewest hardware - visible as USB composite device to the Streamer Sof
             *DFU USB device to update DevDAC onboard firmware 
             
 
-## Playback Controls 
+#### Playback Controls 
 
 Uses standart HID controls for next, previous track, pause/play, stop
 
