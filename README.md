@@ -16,7 +16,7 @@ DevDAC - lakewest hardware - visible as USB composite device to the Streamer Sof
 
 Uses standart HID controls for next, previous track, pause/play, stop
 
-##### VOLUME
+#### VOLUME
 
 ```shell
 [getVolume]{}
@@ -45,7 +45,7 @@ mute:
 	0 - not muted
 	1 - digital mute
 
-##### INPUT
+#### INPUT
 
 ```shell
 [getInput]{}
@@ -68,7 +68,7 @@ activeInput:
 	3   "OPT 1",	
 	4 - 255 reserved for future use.
 
-##### PLAYBACK INFO
+#### PLAYBACK INFO
 
 ```shell
 [getAudioFormat]{}
@@ -149,7 +149,7 @@ fileFormat:
 	--please add more supported formats
 
 
-##### DIGITAL FILTER
+#### DIGITAL FILTER
 
 ```shell
 [getFilter]{filter:0}
@@ -174,7 +174,7 @@ filters:
 	6   "Corrected Minimum Phase Fast roll-off",
 	7   "Brick Wall"
 	
-##### THD COMPENSATION
+#### THD COMPENSATION
 
 ```shell
 [getTHDcomp]{state:0}
@@ -194,7 +194,7 @@ state:
 	1   "THD compenstation enabled  - measurement mode	
 
 	
-##### DEVDAC SPECIFIC
+#### DEVDAC SPECIFIC
 
 ```shell
 [get]{}
@@ -218,7 +218,7 @@ DevDAC specific:
 	
 	
 	
-##### POWER OFF CONTROL
+#### POWER OFF CONTROL
 
 Is pushed from the DevDAC to CM3 to signal user has switched off the unit with hardware front panel button. CM3 software then needs to start shutting down. After its mostly ready to cut the power, it sets turn off with cmd set to 1. DevDAC confirms with push with cmd 1 and then cuts the CM3 power in 10 seconds.
 
@@ -235,7 +235,7 @@ cmd:
 0 - start shutting down - either user pressed a hardware power button or is shutting it down thru the CM3 software
 1 - unit is ready to cut the power in 10 seconds
 
-##### DEVDAC VERSION
+#### DEVDAC VERSION
 (from CM3 to DEVDAC)
 
 ```shell
@@ -246,7 +246,7 @@ cmd:
 [pushBoardVersion]{BoardRev:1.2,XMOS0:1.1,XMOS1:1.1}
 ```
 
-##### STREAMER VERSION
+#### STREAMER VERSION
 (from DEVDAC to CM3)
 
 ```shell
