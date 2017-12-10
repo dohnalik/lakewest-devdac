@@ -229,7 +229,7 @@ levelDSD:
 ```
 
 ```shell
-[pushBoot]{boot:0}
+[setBoot]{boot:0}
 ```
 
 boot:
