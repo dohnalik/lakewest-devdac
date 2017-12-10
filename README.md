@@ -5,6 +5,7 @@ get command returns push. set command returns push to confirm new value. push co
 Terms definition:
 
 Streamer Software - any software running on lakewest DevDAC hardware using this open protocol
+
 DevDAC - lakewest hardware - visible as USB composite device to the Streamer Software as:
 
             *USB Audio Class 2 device (suport up to 768kHz 32 bits, DSD512 native, DoP256)
