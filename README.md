@@ -1,7 +1,5 @@
 # Serial Communication API for devDAC
 
-Communication channel is a USB CDC COM port as se composite device combined with USB audio and HID control endpoints.
-
 get command returns push. set command returns push to confirm new value. push command to DevDAC is not a valid cmd, its only pushed back by DevDAC to return/confirm set value.
 
 Terms definition:
