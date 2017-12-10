@@ -235,7 +235,7 @@ levelDSD:
 boot:
 
 	0   note defined,	
-	1   puts CM3 into USB bootloader mode where new firmware can be burned in over USB	
+	1   puts CM3 into USB bootloader mode where new Streamer Software image can uploaded in over USB	
 	
 TODO:
 define exit from bootloader mode thru I2C-1 command from Streamer Software to DevDAC as USB CDC channel has been disconected in bootloader mode. 
@@ -263,14 +263,14 @@ cmd:
 1 - unit is ready to cut the power in 10 seconds
 
 #### DEVDAC VERSION
-(from Streamer Software to DEVDAC)
+(from Streamer Software to DevDAC)
 
 ```shell
 [getBoardVersion]{}
 ```
 
 ```shell
-[pushBoardVersion]{BoardRev:1.2,XMOS0:1.1,XMOS1:1.1}
+[pushBoardVersion]{boardRev:12,firmwareXMOS0:11,firmwareXMOS1:11}
 ```
 
 #### STREAMER VERSION
@@ -281,5 +281,5 @@ cmd:
 ```
 
 ```shell
-[pushStreamerVersion]{VERSION:1.223}
+[pushStreamerVersion]{version:1223}
 ```
