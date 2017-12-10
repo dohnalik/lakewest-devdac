@@ -18,8 +18,6 @@ Uses standart HID controls for next, previous track, pause/play, stop
 
 ## Volume Controls
 
-Volume for left (A), right (B) channels, goes from 0 to 255 (8 bit unsigned). Mute is 1 (muted) or 0.
-
 ##### VOLUME
 
 ```shell
@@ -33,6 +31,16 @@ Volume for left (A), right (B) channels, goes from 0 to 255 (8 bit unsigned). Mu
 ```shell
 [setVolume]{volumeA:255,volumeB:255,mute:0}
 ```
+
+volumeA: 
+	left channel
+	0 - 255; 0 = 0dB; 0.5dB step
+volumeB: 
+	right channel
+	0 - 255; 0 = 0dB; 0.5dB step
+mute:
+	0 - not muted
+	1 - digital mute
 
 ##### INPUT
 
