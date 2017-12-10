@@ -64,7 +64,7 @@ mute:
 DevDAC specific
 activeInput:
 
-	0   "Stremer",	
+	0   "Streamer",	
 	1   "USB",	
 	2   "COAX 1",	
 	3   "OPT 1",	
