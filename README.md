@@ -33,12 +33,17 @@ Uses standart HID controls for next, previous track, pause/play, stop
 ```
 
 volumeA: 
+		
 	left channel
 	0 - 255; 0 = 0dB; 0.5dB step
+	
 volumeB: 
+	
 	right channel
 	0 - 255; 0 = 0dB; 0.5dB step
+	
 mute:
+	
 	0 - not muted
 	1 - digital mute
 
@@ -56,7 +61,8 @@ mute:
 [setInput]{activeInput:2}
 ```
 
-DevDAC specific:
+DevDAC specific
+activeInput:
 
 	0   "Stremer",	
 	1   "USB",	
