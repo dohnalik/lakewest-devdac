@@ -1,4 +1,4 @@
-# Serial Communication API for devDAC
+# Serial Communication API for LakeWest DevDAC
 
 get command returns push. set command returns push to confirm new value. push command to DevDAC is not a valid cmd, its only pushed back by DevDAC to return/confirm set value.
 
@@ -6,7 +6,7 @@ Terms definition:
 
 Streamer Software - any software running on lakewest DevDAC hardware using this open protocol
 
-DevDAC - lakewest hardware - visible as USB composite device to the Streamer Software as:
+DevDAC - LakeWest hardware - visible as USB composite device to the Streamer Software as:
 
             *USB Audio Class 2 device (suport up to 768kHz 32 bits, DSD512 native, DoP256)
             *CDC USB device COM port - 115200, 8, N, 1 - active with this protocol
