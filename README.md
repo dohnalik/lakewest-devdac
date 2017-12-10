@@ -6,6 +6,7 @@ Terms definition:
 
 Streamer Software - any software running on lakewest DevDAC hardware using this open protocol
 DevDAC - lakewest hardware - visible as USB composite device to the Streamer Software as:
+
             *USB Audio Class 2 device (suport up to 768kHz 32 bits, DSD512 native, DoP256)
             *CDC USB device COM port - 115200, 8, N, 1 - active with this protocol
             *HID USB device for playback control
