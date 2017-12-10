@@ -16,8 +16,6 @@ DevDAC - lakewest hardware - visible as USB composite device to the Streamer Sof
 
 Uses standart HID controls for next, previous track, pause/play, stop
 
-## Volume Controls
-
 ##### VOLUME
 
 ```shell
