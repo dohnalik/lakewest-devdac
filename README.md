@@ -197,6 +197,22 @@ state:
 
 	0   "THD compenstation disabled - listening mode",		
 	1   "THD compenstation enabled  - measurement mode	
+	
+#### LOCK INDICATION
+
+```shell
+[getLock]{state:0}
+```
+
+```shell
+[pushLock]{state:0}
+```
+
+state:
+
+	0   DAC chips unlocked,		
+	1   DAC chips locked
+
 
 
 #### DPLL BANDWIDTH
