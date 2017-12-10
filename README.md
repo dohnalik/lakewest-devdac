@@ -135,6 +135,76 @@ fileFormat:
 	7   "wma"
 	
 	--please add more supported formats
+
+
+##### DIGITAL FILTER
+
+```shell
+[getFilter]{filter:0}
+```
+
+```shell
+[pushFilter]{filter:0}
+```
+
+```shell
+[setFilter]{filter:0}
+```
+
+filters:
+
+	0   "Optimal Transient",	
+	1   "Linear Phase Fast roll-off",	
+	2   "Linear Phase Slow roll-off",	
+	3   "Minimum Phase Fast roll-off",	
+	4   "Minimum Phase Slow roll-off",
+	5   "Apodizing Fast roll-off",
+	6   "Corrected Minimum Phase Fast roll-off",
+	7   "Brick Wall"
+	
+##### THD COMPENSATION
+
+```shell
+[getTHDcomp]{state:0}
+```
+
+```shell
+[pushTHDcomp]{state:0}
+```
+
+```shell
+[setTHDcomp]{state:0}
+```
+
+state:
+
+	0   "THD compenstation disabled - listening mode",		
+	1   "THD compenstation enabled  - measurement mode	
+
+	
+##### DEVDAC SPECIFIC
+
+```shell
+[get]{}
+```
+
+```shell
+[pushInput]{activeInput:2}
+```
+
+```shell
+[setInput]{activeInput:2}
+```
+
+DevDAC specific:
+
+	0   "Stremer",	
+	1   "USB",	
+	2   "COAX 1",	
+	3   "OPT 1",	
+	4 - 255 reserved for future use.
+	
+	
 	
 ##### POWER OFF CONTROL
 
